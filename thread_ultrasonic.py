@@ -45,13 +45,16 @@ class Ultrasonic(threading.Thread):
                        
 def main():
     class1 = Ultrasonic("App1", 5, 16)
+    class2 = Ultrasonic("App2", 6, 15)
     class1.start()
+    class2.start()
 
 try:
     main()
     print("Running!")
 except KeyboardInterrupt:
     class1.terminate()
+    class2.terminate()
     GPIO.cleanup()
     print("Done!")
 
