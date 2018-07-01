@@ -31,7 +31,7 @@ class Ultrasonic(threading.Thread):
     def run(self):
         while True:
             distance = 0
-            for i in range(10)
+            for i in range(10):
                 d = self.distance()
                 if d > 1000:
                     pass
