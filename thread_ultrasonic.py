@@ -29,19 +29,26 @@ class Ultrasonic(threading.Thread):
         return distance
 
     def run(self):
-        while True:
-            distance = self.distance()
-            if distance > 1000:
-                pass
-            else:
-                print(str(self.name) + " Distance: " + str(distance) + " cm \n")
-            time.sleep(0.1)
+        try:
+            while True:
+                distance = self.distance()
+                if distance > 1000:
+                    pass
+                else:
+                    print(str(self.name) + " Distance: " + str(distance) + " cm \n")
+                time.sleep(0.1)
+        except KeyboardInterrupt:
+            break
 
 
-
-try:
+            
+            
+def main()
     class1 = Ultrasonic("App1", 5, 16)
     class1.start()
+
+try:
+    main()
     print("Running!")
 except KeyboardInterrupt:
     class1.terminate()
