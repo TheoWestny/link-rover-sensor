@@ -1,10 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 import threading
-
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(5, GPIO.OUT)
-GPIO.setup(16, GPIO.IN)
+
 
 
 class Ultrasonic(threading.Thread):
@@ -13,6 +11,8 @@ class Ultrasonic(threading.Thread):
         self.name = name
         self.trig_pin = trig
         self.echo_pin = echo
+        GPIO.setup(5, GPIO.OUT)
+        GPIO.setup(16, GPIO.IN)
 
 
     def distance(self):
@@ -40,8 +40,7 @@ def main():
 
 try:
     main()
-    GPIO.cleanup()
-    print("Done!")
+    print("Running!")
 except KeyboardInterrupt:
     GPIO.cleanup()
     print("Done!")
