@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 import threading
-GPIO.setmode(GPIO.BCM)
+
 
 
 class Ultrasonic(threading.Thread):
@@ -10,7 +10,7 @@ class Ultrasonic(threading.Thread):
         self.name = name
         self.trig_pin = trig
         self.echo_pin = echo
-
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.trig_pin, GPIO.OUT)
         GPIO.setup(self.echo_pin, GPIO.IN)
 
