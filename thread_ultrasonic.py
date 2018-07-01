@@ -41,9 +41,8 @@ class Ultrasonic(threading.Thread):
             break
 
 
-            
-            
-def main()
+                       
+def main():
     class1 = Ultrasonic("App1", 5, 16)
     class1.start()
 
