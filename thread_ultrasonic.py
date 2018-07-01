@@ -30,9 +30,17 @@ class Ultrasonic(threading.Thread):
 
     def run(self):
         while True:
-            distance = self.distance()
-            print(str(self.name) + " Distance: " + str(distance) + " cm \n")
-            time.sleep(0.1)
+            distance = 0
+            for i in range(10)
+                d = self.distance()
+                if d > 1000:
+                    pass
+                else:
+                    distance = distance + d
+                time.sleep(0.01)
+            mid = distance/10            
+            print(str(self.name) + " Distance: " + str(mid) + " cm \n")
+            time.sleep(0.01)
 
 
 def main():
