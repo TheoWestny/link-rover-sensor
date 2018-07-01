@@ -38,13 +38,10 @@ class Ultrasonic(threading.Thread):
             time.sleep(0.1)
 
 
-def main():
-    class1 = Ultrasonic("App1", 5, 16)
-    class1.start()
-
 
 try:
-    main()
+    class1 = Ultrasonic("App1", 5, 16)
+    class1.start()
     print("Running!")
 except KeyboardInterrupt:
     class1.terminate()
