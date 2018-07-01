@@ -11,8 +11,8 @@ class Ultrasonic(threading.Thread):
         self.name = name
         self.trig_pin = trig
         self.echo_pin = echo
-        GPIO.setup(5, GPIO.OUT)
-        GPIO.setup(16, GPIO.IN)
+        GPIO.setup(self.trig_pin, GPIO.OUT)
+        GPIO.setup(self.echo_pin, GPIO.IN)
 
 
     def distance(self):
@@ -36,7 +36,7 @@ class Ultrasonic(threading.Thread):
                     pass
                 else:
                     print(str(self.name) + " Distance: " + str(distance) + " cm \n")
-                time.sleep(0.1)
+                time.sleep(0.5)
             except KeyboardInterrupt:
                 break
 
