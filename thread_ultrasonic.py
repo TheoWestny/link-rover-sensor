@@ -44,6 +44,7 @@ try:
     main()
     print("Running!")
 except KeyboardInterrupt:
+    class1.terminate()
     GPIO.cleanup()
     print("Done!")
 
