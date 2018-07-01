@@ -34,7 +34,7 @@ class Ultrasonic(threading.Thread):
             if distance > 1000:
                 pass
             else:
-                print(str(self.name) + " Distance: " + str(mid) + " cm \n")
+                print(str(self.name) + " Distance: " + str(distance) + " cm \n")
             time.sleep(0.1)
 
 
