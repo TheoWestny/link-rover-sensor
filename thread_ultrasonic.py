@@ -29,8 +29,10 @@ class Ultrasonic(threading.Thread):
         return distance
 
     def run(self):
-        distance = self.distance()
-        print(str(self.name) + " Distance: " + str(distance) + " cm \n")
+        while True:
+            distance = self.distance()
+            print(str(self.name) + " Distance: " + str(distance) + " cm \n")
+            time.sleep(0.01)
 
 
 def main():
