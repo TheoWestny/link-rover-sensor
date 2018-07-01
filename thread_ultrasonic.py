@@ -2,6 +2,9 @@ import RPi.GPIO as GPIO
 import time
 import threading
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(5, GPIO.OUT)
+GPIO.setup(16, GPIO.IN)
 
 
 class Ultrasonic(threading.Thread):
@@ -10,9 +13,7 @@ class Ultrasonic(threading.Thread):
         self.name = name
         self.trig_pin = trig
         self.echo_pin = echo
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(self.trig_pin, GPIO.OUT)
-        GPIO.setup(self.echo_pin, GPIO.IN)
+
 
     def distance(self):
         GPIO.output(self.trig_pin, 1)
