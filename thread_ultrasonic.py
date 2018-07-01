@@ -9,7 +9,6 @@ class Ultrasonic(threading.Thread):
     def __init__(self, name, trig, echo):
         threading.Thread.__init__(self)
         self.name = name
-        self.setDaemon(True)
         self.trig_pin = trig
         self.echo_pin = echo
         GPIO.setup(5, GPIO.OUT)
